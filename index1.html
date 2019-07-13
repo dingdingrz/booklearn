@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        let _toString = Object.prototype.toString;
+        let map = {
+            array:'Array',
+            Object:'Object',
+            function:'Function',
+            string:'String',
+            null:'Null',
+            undefined:'Undefined',
+             boolean:'Boolean',
+            number:'Number'
+        } 
+        let getType = (item)=> {
+            return _toString.call(item).slice(8,-1)
+        }
+        let isTypeOf  = (item,type) => {
+            return map[type] && map[type] ==getType(item)
+        }
+
+        // 深度遍历
+        let DFSdeepClone = (obj, visitedArr = [] ) => {
+            let obj = {},
+            if(itTypeOf())
+        }
+    </script> -->
+<script>   
+    function getEmpty(o){
+        if(Object.prototype.toString.call(o) === '[object Object]')
+        return {};
+        if(Object.prototype.toString.call(o) === '[object Array]'){
+            return [];
+        }
+    }
+    let test = {a:4}
+    let test1 = [1,2,3]
+    console.log(getEmpty(test1))
+    console.log(Object.prototype.toString.call(test1))
+    function deeoCopyBFS(origin){
+        let queue = [];
+        let map = new Map();
+        let target  = getEmpty(origin)
+       
+        if(target !== origin) {
+            queue.push([origin,target]);
+            map.set(origin,target)
+        };
+        while(queue.lenght){
+            let [ori,tar] = queue.shift();
+            for(let key in ori){
+                if(map.get(ori[key])){
+                    tar[key] = map.set(ori[key]);
+                    continue
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
